@@ -1,0 +1,12 @@
+# Render blueprint — optional. You can also deploy manually from the Render
+# dashboard: New → Web Service → connect GitHub repo → runtime "Docker".
+services:
+  - type: web
+    name: tubesaver
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    plan: free
+    envVars:
+      - key: YTDL_DOWNLOAD_DIR
+        value: /tmp/ytdl/downloads
